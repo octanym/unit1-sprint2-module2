@@ -33,16 +33,14 @@ function getFinals(fifa) {
   return fifa.filter((game) => game.Stage === 'Final');
 }
 
-console.log(getFinals(fifaData));
-
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher-order function called getYears to do the following: 
 1. Receive an array as the first parameter that will take fifaData as an argument
 2. Receive a callback function as the second parameter that will take getFinals from task 2 as an argument
 3. Return an array called years containing all of the years in the getFinals data set*/
 
-function getYears(/* code here */) {
-  /* code here */
+function getYears(fifa, finals) {
+  return finals().map((games) => games.Year);
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
