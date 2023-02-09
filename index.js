@@ -77,6 +77,7 @@ function getWinnersByYear(fifa, finals, years, winners) {
   return champions.map(
     (team, index) => `In ${date[index]}, ${team} won the world cup!`
   );
+  z;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -93,8 +94,13 @@ Use the higher order function `getAverageGoals` to do the following:
  
 */
 
-function getAverageGoals(/* code here */) {
-  /* code here */
+function getAverageGoals(getFinals) {
+  const totalGoals = getFinals.reduce(
+    (acc, curr) => acc + curr['Home Team Goals'] + curr['Away Team Goals'],
+    0
+  );
+
+  return (totalGoals / getFinals.length).toFixed(2);
 }
 
 /// 🥅 STRETCH 🥅 ///
